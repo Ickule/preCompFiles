@@ -6,19 +6,20 @@ import os
 cases=['P_class','M_class']
 mods=['amplitude','phase']
 
-# Initialisong time related variables
-timeNomWait = 5
-ptTimeNomWait = timeNomWait*10000+1
-timeNomWaitArray = np.linspace(0,timeNomWait,ptTimeNomWait)
-timeTest = 30
-ptTimeTest = timeTest*10000+1
-timeTestArray = np.linspace(0,timeTest,ptTimeTest)
-
 # Initialisong fundamental related and fixed variables
 omega0 = 50*2*np.pi
 Xm = 230
 stepMax = 1
 stepMin = -1
+samplingRate = 44100
+
+# Initialisong time related variables
+timeNomWait = 5
+ptTimeNomWait = timeNomWait*samplingRate+1
+timeNomWaitArray = np.linspace(0,timeNomWait,ptTimeNomWait)
+timeTest = 30
+ptTimeTest = timeTest*samplingRate+1
+timeTestArray = np.linspace(0,timeTest,ptTimeTest)
 
 # Computing nominal signal
 nomSig = Xm*np.sin(omega0*timeNomWaitArray)
